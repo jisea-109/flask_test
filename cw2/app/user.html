@@ -1,0 +1,23 @@
+{% extends "base2.html" %}
+{% block title %}{% endblock %}
+{% block content %}
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+        <p class="h4" style="text-align:center">{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <div class="container">
+  <form action= "#" method="POST">
+    <br />
+    <div class="form-group" style="width: 500px;">
+      <input type="text" name="title" class="form-control" placeholder="Title" required>
+    </div>
+    <div class="form-group">
+      <textarea placeholder="Text" name="text" class="form-control" cols="150" rows="20" style="resize:none;"></textarea>
+    </div>
+      <button class="btn btn-primary" type="submit">Post</button>
+  </form>
+  </div>
+{% endblock %}

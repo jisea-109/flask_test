@@ -1,0 +1,23 @@
+{% extends "base2.html" %}
+{% block title %} View Post {% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for msg in messages %}
+      <p class="h4" style="text-align:center">{{msg}}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+{% for item in values %}
+<br />
+<div class="container border" style="background-color: #f0f0f5; height:auto; border-radius: 20px 20px 20px 20px;">
+  <div class="p-2 mb-2 text-dark" style="border-bottom: groove;">
+    <p class="h4">Title: {{item.title}}</p>
+  </div>
+  <div class="col-sm-9 p-2" style="width:100%">
+    <p class="h5">Text: {{item.text}}</p>
+  </div>
+</div>
+<br />
+{% endfor %}
+{% endblock %}

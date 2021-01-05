@@ -1,0 +1,28 @@
+{% extends "base2.html" %}
+{% block title %} {% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for msg in messages %}
+      <p class="h4" style="text-align:center">{{msg}}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<div class="container">
+    <h1 style="text-align:center; margin-top: 110px;">Change password</h1>
+    <form action="" method="Post">
+      <div class="form-group" align="middle">
+        <input type="password" name="current" class="form-control" placeholder="Current password" required style="width:35%; margin-top: 40px; height:40px;">
+      </div>
+      <div class="form-group" align="middle">
+        <input type="password" name="password" class="form-control" placeholder="password you want to change" required style="width:35%; height:40px">
+      </div>
+      <div class="form-group" align="middle">
+        <input type="password" name="confirm" class="form-control" placeholder="password" required style="width:35%; height:40px">
+      </div>
+      <div align="middle">
+        <button class="btn btn-primary" type="submit">Change</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}
